@@ -1,0 +1,61 @@
+<view class="tui-tabs">
+
+
+  <view class="tui-list-cell nav">
+    <view wx:for="{{tabBars}}" class="nav-item  {{tabIndex==index?'text-selected current':''}}" wx:for-item="tab"
+      wx:key="index" data-current="{{index}}" bindtap="tabClick">
+      <view>{{ tab }}</view>
+    </view>
+  </view>
+
+
+
+  <swiper current="{{tabIndex}}" class="tui-swiper-box" duration="300" bindchange="tabChange">
+    <swiper-item class="tui-swiper-item" wx:for="{{3}}" wx:for-item="tab" wx:for-index="index" wx:key="index1">
+
+      <scroll-view scroll-y>
+
+        <view wx:if="{{index == 0}}">
+
+          <import src="template/template_1.wxml" />
+          <block>
+            <template is="templateinfo"
+              data="{{data:data}}" />
+          </block>
+
+        </view>
+
+
+
+        <view wx:if="{{index == 1}}">
+          
+         
+          <import src="template/template_2.wxml" />
+          <block>
+            <template is="templateinfo"
+              data="{{data:data}}" />
+          </block>
+
+
+        </view>
+
+        <view wx:if="{{index == 2}}">
+
+          
+          <import src="template/template_3.wxml" />
+          <block>
+            <template is="templateinfo"
+              data="{{data:data}}" />
+          </block>
+
+
+
+        </view>
+
+      </scroll-view>
+
+    </swiper-item>
+  </swiper>
+
+
+</view>
