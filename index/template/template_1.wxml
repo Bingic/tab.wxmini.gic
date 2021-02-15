@@ -1,0 +1,6 @@
+<template name="templateinfo">
+
+  <view wx:for="{{10}}" wx:key="key">~~~~~~~~~~~~~~ this is detail 0{{index}}  ~~~~~~~~~~~~~~</view>
+
+
+</template>
